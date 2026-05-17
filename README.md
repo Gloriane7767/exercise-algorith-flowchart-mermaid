@@ -13,15 +13,14 @@ Write a program that:
  
 ```text
 START
-    INPUT A
-    INPUT B
-
+    INPUT A,B
     IF A > B THEN
         DISPLAY "A is larger"
-    ELSE IF B > A THEN
-        DISPLAY "B is larger"
-    ELSE
+    ELSE 
+    IF A==B THEN
         DISPLAY "Both numbers are equal"
+    ELSE
+        DISPLAY " B is larger"
     ENDIF
 END
 ```
@@ -35,7 +34,7 @@ flowchart TD
     C --> D{A > B?}
     
     D -->|Yes| E[Display A is larger]
-    D -->|No| F{A = B?}
+    D -->|No| F{A == B?}
     
     F -->|Yes| G[Display Both numbers are equal]
     F -->|No| H[Display B is larger]
@@ -50,7 +49,7 @@ Sum of 5 Numbers ( Loop + Accumulation)
 
 Write pseudocode for a program that:
 - Read 5 numbers one by one
-- calculate theor total sum
+- calculate the total sum
 - Display the results
 
 
@@ -59,7 +58,6 @@ Write pseudocode for a program that:
 ```text
 START
     SET sum ← 0
-
     FOR count ← 1 TO 5 DO
         DISPLAY "Enter number ", count
         READ number
